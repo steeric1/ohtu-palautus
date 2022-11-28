@@ -108,7 +108,7 @@ class TestKauppa(unittest.TestCase):
         kauppa.maksa("1111")
 
         # varmistetaan, että nyt käytössä ensimmäinen viite
-        pankki_mock.maksa.assert_called_with(ANY, ANY, 1)
+        pankki_mock.maksa.assert_called_with(ANY, ANY, 10)
 
         kauppa.aloita_ostokset()
         kauppa.lisaa_ostos(1)
