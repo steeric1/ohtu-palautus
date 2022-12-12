@@ -48,3 +48,11 @@ class HasFewerThan:
 
     def test(self, player):
         return not self._matcher.test(player)
+
+
+class Or:
+    def __init__(self, *matchers):
+        self._matchers = matchers
+
+    def test(self, player):
+        return any(m.test(player) for m in self._matchers)
